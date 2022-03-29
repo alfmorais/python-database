@@ -7,7 +7,9 @@ class AgendaDB:
         self.cursor = self.conn.cursor()
 
     def inserir(self, nome, telefone):
-        consulta = 'INSERT OR IGNORE INTO agenda (nome, telefone) VALUES (?, ?)'
+        consulta = (
+            'INSERT OR IGNORE INTO agenda (nome, telefone) VALUES (?, ?)'
+        )
         self.cursor.execute(consulta, (nome, telefone))
         self.conn.commit()
 
@@ -32,6 +34,6 @@ class AgendaDB:
         self.conn.close()
 
 
-if __name__ == "__main__":
-    agenda = AgendaDB("agenda.db")
-    agenda.inserir("Alfredo", "19991061504")
+if __name__ == '__main__':
+    agenda = AgendaDB('agenda.db')
+    agenda.inserir('Alfredo', '19991061504')

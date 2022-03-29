@@ -1,0 +1,5 @@
+blue==0.7.0
+markdown
+pip-compile-multi
+prospector==1.6.0
+python-decouple==3.6

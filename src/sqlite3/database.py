@@ -1,12 +1,11 @@
-import sqlite3
 import os
+import sqlite3
 
-
-filename = r"database.py"
+filename = r'database.py'
 
 
 # abre o banco de dados e cria um cursor para persistir os dados
-connection = sqlite3.connect("database.db")
+connection = sqlite3.connect('database.db')
 cur = connection.cursor()
 
 
@@ -20,7 +19,6 @@ if filename is False:
         ')'
     )
 
-
     # inserindo dados no banco de dados
     cur.execute(
         'INSERT INTO clientes (nome, peso) VALUES ("Alfredo de Morais", 65.50)'
@@ -30,26 +28,17 @@ if filename is False:
     )
     cur.execute(
         'INSERT INTO clientes (nome, peso) VALUES (:nome, :peso)',
-        {
-            "nome": "Denise",
-            "peso": 78.5
-        }
+        {'nome': 'Denise', 'peso': 78.5},
     )
     cur.execute(
         'INSERT INTO clientes VALUES (:id, :nome, :peso)',
-        {
-            "id": None,
-            "nome": "Vera",
-            "peso": 75.4
-        }
+        {'id': None, 'nome': 'Vera', 'peso': 75.4},
     )
     connection.commit()
 
 
 # mostrando todos os dados de uma tabela
-cur.execute(
-    'SELECT * FROM clientes'
-)
+cur.execute('SELECT * FROM clientes')
 
 # interando os dados de uma tabela
 for linha in cur.fetchall():
@@ -60,18 +49,13 @@ for linha in cur.fetchall():
 # atualizando dados da tabela
 cur.execute(
     'UPDATE clientes SET nome=:nome WHERE id=:id',
-    {
-        "id": 2,
-        "nome": "Joaquim Neto"
-    }
+    {'id': 2, 'nome': 'Joaquim Neto'},
 )
 connection.commit()
 
 
 # mostrando todos os dados de uma tabela
-cur.execute(
-    'SELECT * FROM clientes'
-)
+cur.execute('SELECT * FROM clientes')
 
 # interando os dados de uma tabela
 for linha in cur.fetchall():
@@ -80,10 +64,7 @@ for linha in cur.fetchall():
 
 
 # deletando dados de uma tabela
-cur.execute(
-    'DELETE FROM clientes WHERE id=:id',
-    {"id": 4}
-)
+cur.execute('DELETE FROM clientes WHERE id=:id', {'id': 4})
 
 # boa prática em bancos de dados, abrir e fechar -> conexão e cursor.
 cur.close()
