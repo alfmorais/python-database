@@ -1,0 +1,4 @@
+sqlalchemy
+tqdm
+psycopg2-binary
+pip-compile-multi
