@@ -18,3 +18,7 @@ src/sqlalchemy
 ├── __init__.py
 └── sqlalchemy.md
 ```
+
+## Diagrama UML do Banco de Dados
+
+![](img/fabrica.png)
