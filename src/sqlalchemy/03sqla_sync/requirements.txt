@@ -4,12 +4,27 @@
 #
 #    pip-compile requirements.in
 #
+appdirs==1.4.4
+    # via black
+black==21.7b0
+    # via blue
+blue==0.8.0
+    # via -r requirements.in
 click==8.1.2
     # via
+    #   black
     #   pip-compile-multi
     #   pip-tools
+flake8==4.0.1
+    # via blue
 greenlet==1.1.2
     # via sqlalchemy
+mccabe==0.6.1
+    # via flake8
+mypy-extensions==0.4.3
+    # via black
+pathspec==0.9.0
+    # via black
 pep517==0.12.0
     # via pip-tools
 pip-compile-multi==2.4.5
@@ -18,10 +33,18 @@ pip-tools==6.5.1
     # via pip-compile-multi
 psycopg2-binary==2.9.3
     # via -r requirements.in
+pycodestyle==2.8.0
+    # via flake8
+pyflakes==2.4.0
+    # via flake8
+regex==2022.3.15
+    # via black
 sqlalchemy==1.4.34
     # via -r requirements.in
-tomli==2.0.1
-    # via pep517
+tomli==1.2.3
+    # via
+    #   black
+    #   pep517
 toposort==1.7
     # via pip-compile-multi
 tqdm==4.63.1
