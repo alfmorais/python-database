@@ -17,7 +17,7 @@ class TipoPicole(ModelBase):
         index=True,
     )
     nome: str = sqlalchemy.Column(
-        sqlalchemy.String,
+        sqlalchemy.String(45),
         unique=True,
         nullable=False,
     )
