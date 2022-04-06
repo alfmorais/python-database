@@ -32,4 +32,4 @@ class Lote(ModelBase):
     )
 
     def __repr__(self) -> str:
-        return f"<Lote: {self.nome}>"
+        return f"<Lote: {self.id}>"
